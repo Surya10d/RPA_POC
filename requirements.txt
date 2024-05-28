@@ -1,0 +1,7 @@
+robotframework
+robotframework-seleniumlibrary
+schedule
+yagmail
+Pillow
+pyautogui
+load_dotenv
