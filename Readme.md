@@ -5,7 +5,7 @@
 
 ## Installing Robot Framework with pip is simple:
 
-# ```pip install robotframework ```
+# ```pip install -r requirements.txt ```
 
 ## To check that the installation was successful, run
 
