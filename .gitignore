@@ -2,3 +2,5 @@
 *.html
 *.xml
 *.png
+*.iml
+**/__pycache__/*
