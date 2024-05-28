@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Simple example using SeleniumLibrary.
 Library    SeleniumLibrary
-Library    Test/send_mail.py
+Library    Resource/Library/send_mail.py
 
 Suite Setup    Create webdriver    Chrome
 Suite Teardown    Close All Browsers
