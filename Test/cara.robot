@@ -49,6 +49,7 @@ Logout Cara
     Scroll Element Into View    css:[href="../parents/PapLogout.aspx"]
     Sleep    2
     Execute Javascript    document.querySelector('[href="../parents/PapLogout.aspx"]').click();
+    Sleep    3
     Wait Until Element Contains    xpath://*[text()="Go to Home page"]    Go to Home page    20
     Log    Logged Out successfully
 
