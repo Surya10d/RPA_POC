@@ -1,9 +1,9 @@
 name: Robot Framework Test for Windows
 
 on:
-  schedule:
+  # schedule:
     # Runs daily for every 2 hours
-    - cron: '0 */2 * * *'
+    # - cron: '0 */2 * * *'
   workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
@@ -19,16 +19,13 @@ jobs:
       with:
         python-version: '3.9'  # Specify the Python version you need
 
-    - name: Create and activate virtual environment
-      run: |
-        python -m venv venv
-        .\venv\Scripts\activate
-
     - name: Install dependencies
       run: |
-        .\venv\Scripts\python -m pip install --upgrade pip
-        .\venv\Scripts\pip install -r requirements.txt
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
     - name: Run Robot Framework tests
       run: |
-        .\venv\Scripts\robot --pythonpath . cara.robot
+        export PYTHONPATH=$PWD
+        cd Test
+        robot --pythonpath . cara.robot
