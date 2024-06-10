@@ -1,0 +1,33 @@
+name: Robot Framework Test
+
+on:
+  schedule:
+    # Runs daily for every 2 hours
+    - cron: '0 */2 * * *'
+
+jobs:
+  run-robot-tests:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'  # Specify the Python version you need
+
+    - name: Create and activate virtual environment
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+
+    - name: Install dependencies
+      run: |
+        venv/bin/python -m pip install --upgrade pip
+        venv/bin/pip install -r requirements.txt
+
+    - name: Run Robot Framework tests
+      run: |
+        venv/bin/robot --pythonpath . cara.robot
