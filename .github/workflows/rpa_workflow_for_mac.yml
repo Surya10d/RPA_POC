@@ -1,9 +1,9 @@
 name: Robot Framework Test for Mac
 
 on:
-  schedule:
+  # schedule:
     # Runs daily for every 2 hours
-    - cron: '0 */2 * * *'
+    # - cron: '0 */2 * * *'
   workflow_dispatch:
 
 env:
