@@ -11,6 +11,7 @@ env:
   GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
   CARA_USERNAME: ${{ secrets.CARA_USERNAME }}
   CARA_PASSWORD: ${{ secrets.CARA_PASSWORD }}
+  RECEIVER_MAIL_ADDRESS: ${{ secrets.RECEIVER_MAIL_ADDRESS }}
 
 jobs:
   run-robot-tests:
