@@ -4,6 +4,7 @@ on:
   schedule:
     # Runs daily for every 2 hours
     - cron: '0 */2 * * *'
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
   run-robot-tests:
