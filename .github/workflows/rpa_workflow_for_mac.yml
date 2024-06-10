@@ -32,11 +32,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        venv/bin/python -m pip install --upgrade pip
-        venv/bin/pip install -r requirements.txt
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
     - name: Run Robot Framework tests
       run: |
-        pwd
+        source venv/bin/activate
+        export PYTHONPATH=$PWD
         cd Test
         robot --pythonpath . cara.robot
