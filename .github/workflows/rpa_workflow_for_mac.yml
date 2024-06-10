@@ -4,7 +4,13 @@ on:
   schedule:
     # Runs daily for every 2 hours
     - cron: '0 */2 * * *'
-  workflow_dispatch:  # Allows manual triggering of the workflow
+  workflow_dispatch:
+
+env:
+  GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+  GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+  CARA_USERNAME: ${{ secrets.CARA_USERNAME }}
+  CARA_PASSWORD: ${{ secrets.CARA_PASSWORD }}
 
 jobs:
   run-robot-tests:
@@ -31,4 +37,5 @@ jobs:
 
     - name: Run Robot Framework tests
       run: |
+        cd Test
         venv/bin/robot --pythonpath . cara.robot
