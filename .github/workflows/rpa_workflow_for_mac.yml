@@ -39,4 +39,4 @@ jobs:
       run: |
         pwd
         cd Test
-        venv/bin/robot --pythonpath . cara.robot
+        robot --pythonpath . cara.robot
