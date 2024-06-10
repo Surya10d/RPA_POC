@@ -37,5 +37,6 @@ jobs:
 
     - name: Run Robot Framework tests
       run: |
+        pwd
         cd Test
         venv/bin/robot --pythonpath . cara.robot
