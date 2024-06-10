@@ -6,6 +6,13 @@ on:
     # - cron: '0 */2 * * *'
   workflow_dispatch:  # Allows manual triggering of the workflow
 
+env:
+  GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+  GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+  CARA_USERNAME: ${{ secrets.CARA_USERNAME }}
+  CARA_PASSWORD: ${{ secrets.CARA_PASSWORD }}
+  RECEIVER_MAIL_ADDRESS: ${{ secrets.RECEIVER_MAIL_ADDRESS }}
+
 jobs:
   run-robot-tests:
     runs-on: self-hosted
