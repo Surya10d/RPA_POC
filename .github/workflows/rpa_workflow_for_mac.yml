@@ -25,11 +25,6 @@ jobs:
       with:
         python-version: '3.9'  # Specify the Python version you need
 
-    - name: Create and activate virtual environment
-      run: |
-        python -m venv venv
-        source venv/bin/activate
-
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -37,7 +32,6 @@ jobs:
 
     - name: Run Robot Framework tests
       run: |
-        source venv/bin/activate
         export PYTHONPATH=$PWD
         cd Test
         robot --pythonpath . cara.robot
