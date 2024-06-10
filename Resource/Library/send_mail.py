@@ -16,9 +16,9 @@ def send_email(screenshot_path):
     load_dotenv()
     # Replace 'your_email@gmail.com' and 'your_app_password' is your APP password key for Gmail
     sender_email = os.environ.get("GMAIL_ADDRESS")
+    recipient_email = os.environ.get("RECEIVER_MAIL_ADDRESS")
     sender_password = (os.environ.get("GMAIL_PASSWORD").replace("\xa0", " ")
                       .replace("'", "").replace('"', ''))
-    recipient_email = "surya.mr+1@zyngl.com"
     subject = "Webpage Update Screenshot"
     body = "The webpage has been updated. See the attached screenshot."
 
