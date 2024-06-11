@@ -33,4 +33,5 @@ jobs:
 
     - name: Run Robot Framework tests
       run: |
+        SET PYTHONPATH=$PWD
         robot --pythonpath . Test/cara.robot
