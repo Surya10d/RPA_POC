@@ -48,3 +48,75 @@ Install using your package manager. For example, on Ubuntu:
 ```commandline
 sudo apt-get install tesseract-ocr
 ```
+
+### Steps to follow it is windows while configuring action-runner
+#### Pre-condition:
+Set the Execution policy to remote signed, for more information use below URL
+
+https://www.sharepointdiary.com/2014/03/fix-for-powershell-script-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system.html
+Open powershell as administrator, use below command
+
+```
+Set-ExecutionPolicy RemoteSigned
+```
+Give Input as "A" to Yes To All and press Enter.
+
+#### If the machine does not have Python, Tesseract-OCR, PIP on env path, We need to add manually
+
+PYTHON to add in env path
+
+```commandline
+C:\Users\<username>\actions-runner\_work\_tool\Python\3.9.13\x64
+```
+Tesseract-OCR to add in env path
+
+```commandline
+C:\Program Files\Tesseract-OCR\
+```
+
+PIP library to add in env path
+
+```commandline
+C:\Users\<username>\actions-runner\_work\_tool\Python\3.9.13\x64\lib\site-packages
+```
+
+### To verify the added path configuration
+
+Use below command to verify
+#### For Python verification
+
+```commandline
+python --version
+```
+output: 
+```
+Python 3.9.13
+```
+
+#### For Tesseract-OCR verification
+```commandline
+tesseract --version
+```
+output: 
+```
+tesseract v5.4.0.20240606
+ leptonica-1.84.1
+  libgif 5.2.1 : libjpeg 8d (libjpeg-turbo 3.0.1) : libpng 1.6.43 : libtiff 4.6.0 : zlib 1.3 : libwebp 1.4.0 : libopenjp2 2.5.2
+ Found AVX512BW
+ Found AVX512F
+ Found AVX512VNNI
+ Found AVX2
+ Found AVX
+ Found FMA
+ Found SSE4.1
+ Found libarchive 3.7.4 zlib/1.3.1 liblzma/5.6.1 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.6
+```
+
+#### For PIP verification
+```commandline
+python -m pip --version
+```
+output: 
+```
+pip 24.0 from C:\Users\<username>\actions-runner\_work\_tool\Python\3.9.13\x64\lib\site-packages\pip (python 3.9)
+```
