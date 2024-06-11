@@ -61,6 +61,24 @@ Set-ExecutionPolicy RemoteSigned
 ```
 Give Input as "A" to Yes To All and press Enter.
 
+
+#### Configuring the action-runner on windows
+Get the required access for the repository and verify the following things
+
+On repository the Settings option should be displayed.
+Click on Settings and verify the options are displayed
+Actions > Runners > New self hosted runner.
+
+If the options are displayed, then we can able to add manage action runner
+
+To add New action runner for windows, Click on New self hoster runner button.
+
+Select the machine as windows and x64 as architecture type.
+
+Now open the powershell window as administrator and follow the steps displayed on github action runner config page.
+Similarly for Mac, Linux machines.
+
+
 #### If the machine does not have Python, Tesseract-OCR, PIP on env path, We need to add manually
 
 PYTHON to add in env path
@@ -120,19 +138,8 @@ output:
 ```
 pip 24.0 from C:\Users\<username>\actions-runner\_work\_tool\Python\3.9.13\x64\lib\site-packages\pip (python 3.9)
 ```
+## Note: 
+After the windows action runner configuration and if we face any issue on workflow run, We need to Turn off settings these two apps on Manage app execution aliases > Python.exe and Python3.exe
+Press windows button search for this option `Manage app execution aliases` and open the page.
+Then turn off the setting by toggling off on those two displayed app.
 
-#### Configuring the action-runner on windows
-Get the required access for the repository and verify the following things
-
-On repository the Settings option should be displayed.
-Click on Settings and verify the options are displayed
-Actions > Runners > New self hosted runner.
-
-If the options are displayed, then we can able to add manage action runner
-
-To add New action runner for windows, Click on New self hoster runner button.
-
-Select the machine as windows and x64 as architecture type.
-
-Now open the powershell window as administrator and follow the steps displayed on github action runner config page.
-Similarly for Mac, Linux machines.
