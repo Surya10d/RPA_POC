@@ -28,7 +28,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        py -m pip install --upgrade pip
+        export PYTHONPATH=$PWD
+        python -m pip install --upgrade pip
         py -m pip install --upgrade setuptools wheel
         pip install -r requirements.txt
 
