@@ -28,13 +28,10 @@ jobs:
 
     - name: Install dependencies
       run: |
-        export PYTHONPATH=$PWD
         python -m pip install --upgrade pip
-        py -m pip install --upgrade setuptools wheel
         pip install -r requirements.txt
 
     - name: Run Robot Framework tests
       run: |
-        export PYTHONPATH=$PWD
         cd Test
         robot --pythonpath . cara.robot
