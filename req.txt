@@ -1,5 +1,0 @@
-python-dotenv
-selenium
-robotframework
-load-dotenv
-pytesseract
