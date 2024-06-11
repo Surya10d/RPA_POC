@@ -49,7 +49,7 @@ Install using your package manager. For example, on Ubuntu:
 sudo apt-get install tesseract-ocr
 ```
 
-### Steps to follow it is windows while configuring action-runner
+### Steps to follow on windows while configuring action-runner
 #### Pre-condition:
 Set the Execution policy to remote signed, for more information use below URL
 
@@ -120,3 +120,19 @@ output:
 ```
 pip 24.0 from C:\Users\<username>\actions-runner\_work\_tool\Python\3.9.13\x64\lib\site-packages\pip (python 3.9)
 ```
+
+#### Configuring the action-runner on windows
+Get the required access for the repository and verify the following things
+
+On repository the Settings option should be displayed.
+Click on Settings and verify the options are displayed
+Actions > Runners > New self hosted runner.
+
+If the options are displayed, then we can able to add manage action runner
+
+To add New action runner for windows, Click on New self hoster runner button.
+
+Select the machine as windows and x64 as architecture type.
+
+Now open the powershell window as administrator and follow the steps displayed on github action runner config page.
+Similarly for Mac, Linux machines.
