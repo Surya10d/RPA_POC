@@ -1,11 +1,14 @@
 from PIL import Image
 import pytesseract
+import os
 
 
 def solve_captcha(captcha_path):
     # Path to the Tesseract executable (required if it's not in your PATH)
     # Example for Windows:
     # pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    if os.name == 'nt':
+        pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
     # Load an image from file
     image = Image.open(captcha_path)
