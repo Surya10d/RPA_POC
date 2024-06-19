@@ -1,17 +1,25 @@
-import schedule
 import time
 import os
 
+hours = 1
+
+
 def run_robot_file():
     # Command to run the robot file
-    os.system('robot --pythonpath ./Test/cara.robot')
+    if os.name == 'nt':
+        os.system('python -m robot .\Test\cara.robot')
+    else:
+        os.system('robot --pythonpath . Test/cara.robot')
+
+
+def hours_to_seconds(hours):
+    """Convert hours to seconds."""
+    seconds = hours * 3600
+    return seconds
+
 
 if __name__ == "__main__":
-    run_robot_file()
-# # Schedule the task to run every 2 hours
-# schedule.every(2).hours.do(run_robot_file)
-
-# # Keep the script running
-# while True:
-#     schedule.run_pending()
-#     time.sleep(1)
+    # Keep the script running
+    while True:
+        run_robot_file()
+        time.sleep(hours_to_seconds(hours))
