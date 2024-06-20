@@ -4,6 +4,7 @@ Library    SeleniumLibrary
 Library    Resource/Library/send_mail.py
 Library    Resource/Library/captcha_solver.py
 Library    Resource/Library/get_credentials.py
+Library    Resource/Library/check_scenario.py
 
 Suite Setup    Setup WebDriver
 Suite Teardown    Close All Browsers
@@ -40,8 +41,10 @@ Check For Updates And Send Email
     [Documentation]    Check the dashboard for updates and send a screenshot via email.
     Go To    ${CHILDREN_AVL_URL}
     Sleep    3
+    ${CHILD_DETAILS}=  Get Text    xpath://table[@class="Grid"]
+    ${FLAG}=    Run Keyword    check_and_get_details    ${CHILD_DETAILS}
     Capture Page Screenshot    ${SCREENSHOT_PATH}
-    Run Keyword    send_email    ${SCREENSHOT_PATH}
+    Run Keyword    send_email    ${SCREENSHOT_PATH}  ${FLAG}
     Log    Got Child details
 
 Logout Cara
