@@ -1,8 +1,12 @@
 import sqlite3
 from datetime import datetime
+import os
 
 # Define database name
-DB_NAME = 'children_agency.db'
+if os.name == 'nt':
+    DB_NAME = os.path.dirname(__file__)+'\\children_agency.db'
+else:
+    DB_NAME = os.path.dirname(__file__) + '/children_agency.db'
 
 
 def create_connection(db_name):
@@ -105,3 +109,7 @@ def check_and_get_details(data):
         return True
     else:
         return False
+
+
+if __name__ == '__main__':
+    pass
